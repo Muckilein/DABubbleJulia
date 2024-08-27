@@ -1,0 +1,235 @@
+.profileDialog {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    right: 50px;
+    top: 130px;
+    display: flex;
+    position: absolute;
+    padding: 45px 40px 45px 40px;
+    box-sizing: border-box;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    background-color: white;
+    gap: 38px;
+}
+
+.profileContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+.imgProfile {
+    width: 200px;
+    height: auto;
+}
+
+.firstLine {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.closeIcon {
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/img/close-hover.svg');
+    }
+}
+
+.cross {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
+}
+
+.edit {
+    text-decoration: none;
+    color: var(--Purple-3, #535AF1);
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+.editPencil {
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/edit-pencil-hover.svg');
+    }
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #92C83E;
+}
+
+
+.state {
+    color: var(--online-green, #92C83E);
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal
+}
+
+.styleState {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.styleMail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    img {
+        filter: contrast(5);
+    }
+}
+
+.userMail {
+    color: #1381FF;
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    margin-top: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.editLabel {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    justify-content: flex-start;
+
+    img {
+        filter: contrast(5);
+    }
+}
+
+.editInputField {
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.editInput {
+    padding: 15px;
+    width: 100%;
+    border: #ADB0D9 1px solid;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.cancel {
+    color: #444DF2;
+    background-color: white;
+    border: 1px solid;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        background-color: #444DF2;
+        color: white;
+    }
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 32px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.dialogGrey {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+}
+
+@media (max-width:830px) {
+    .profileDialog {
+        border-radius: 30px;
+    }
+}
+
+@media (max-width:555px) {
+    .profileDialog {
+        width: unset;
+        right: 20px;
+        left: 20px;
+        top: calc(50% - 201px);
+        padding: 25px 20px;
+        gap: 15px;
+
+        .imgProfile {
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    .mobileEdit {
+        top: calc(100vh - 650px);
+        gap: 20px;
+        padding: 20px 40px 20px 40px;
+    }
+
+    .state {
+        font-size: 15px;
+    }
+
+    .styleMail {
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .userMail {
+        margin-top: 5px;
+    }
+}

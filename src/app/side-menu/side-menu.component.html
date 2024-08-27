@@ -1,0 +1,123 @@
+<div #sideMenuDiv style="height: 100%;">
+    <mat-drawer-container class="example-container mat-drawer-div" [class.mar-right-20]="!sideMenuHidden">
+        <mat-drawer #drawer class="example-sidenav sidenav" mode="side" opened>
+            <img class="newMesMobile" src="assets/icons/new-mes-mobile.svg" (click)="setNewMessage();setDrawerValues()">
+            <div class="head">
+                <img src="assets/img/workspace-logo.svg">
+                <p class="workspace-name">Code learning</p>
+                <img class="edit-pencil" src="assets/icons/edit-pencil-square.svg" (click)="setNewMessage()">
+            </div>
+            <div class="inputMobile">
+                <input placeholder="Gehe zu..." (ngModelChange)="searchKey($event)" [(ngModel)]="text" ngModel>
+                <img src="assets/icons/search.svg">
+            </div>
+            <div class="searchMobile" *ngIf="showPop()">
+                <div *ngFor="let threadTitles of threadTitleDec" class="field" (click)="openChannel(threadTitles.index)"
+                    style="display: flex;flex-direction: column;">
+                    <span class="nunitoBlack"><img src="assets/icons/workspaces.svg"> {{threadTitles.name}}</span>
+                    <span class="nunitoBlack fs14">{{threadTitles.decription}}...</span>
+                </div>
+                <div *ngFor="let uInfo of userInfos" class="field" (click)="openTalk(uInfo)">
+                    <div style="display: flex; position: relative;gap:20px;">
+                        <img src="{{uInfo.iconPath}}">
+                        <span class="nunitoBlack"> {{uInfo.name}}</span>
+                    </div>
+                </div>
+                <div *ngFor="let tMess of threadMessages" class="field" (click)="openChannel(tMess.num)">
+                    <div style="display: flex; flex-direction: column; position: relative;gap:5px;">
+                        <span class="nunitoBlack">#{{tMess.chanName}}</span>
+                        <span class="nunitoBlack fs18">{{tMess.name}}</span>
+                        <span> {{chathelper.makeSubstring(tMess.message,20)}}.... </span>
+                        <span>{{tMess.time}} Uhr am {{getdate(tMess)}}</span>
+                    </div>
+                </div>
+                <div *ngFor="let talkMess of talkMessages" class="field" (click)="openTalk(getOtherUser(talkMess))">
+                    <div style="display: flex; flex-direction: column; position: relative;gap:5px;">
+                        <span class="nunitoBlack">{{talkMess.nameMem1}} & {{talkMess.nameMem2}}</span>
+                        <span> {{chathelper.makeSubstring(talkMess.message,20)}}.... </span>
+                        <span>{{talkMess.time}} Uhr am {{getdateTalk(talkMess)}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-outer-div">
+                <img (click)="openCreateChannelDialog()" class="add-icon" [class.add-icon-panel-open]="chPanelOpen"
+                    src="assets/icons/add.svg">
+                <mat-accordion multi>
+                    <mat-expansion-panel class="mat-elevation-z0 remove-mat-expansion-panel-padding pointer-ev"
+                        (opened)="chPanelOpen=true" (closed)="chPanelOpen=false" hideToggle multi>
+
+                        <mat-expansion-panel-header class="panel-sp" style="box-shadow: none; padding:0px;">
+                            <div class="panel-header">
+                                <div class="header-left">
+                                    <img class="arrow-drop-down" [class.rotate]="chPanelOpen"
+                                        src="assets/icons/arrow-drop-down.svg">
+                                    <div>
+                                        <img class="workspaces-icon" src="assets/icons/workspaces.svg">
+                                        <span class="panel-headline">Channels</span>
+                                    </div>
+                                    <!-- <img (click)="openCreateChannelDialog()" class="add-icon"
+                                        src="assets/icons/add.svg"> -->
+                                </div>
+                            </div>
+                        </mat-expansion-panel-header>
+                        <div *ngFor="let ch of threadList, index as c">
+                            <div class="created-channel" [class.channelActive]="channelActive==c"
+                                (click)="openChannel(c)">
+                                <img src="assets/icons/tag.svg">
+                                <span *ngIf="loaded">{{getName(c)}} </span>
+                            </div>
+                        </div>
+                        <div class="add-ch-div" (click)="openCreateChannelDialog()">
+                            <img class="add-circle" src="assets/icons/add-circle.svg">
+                            <span>Channel hinzufügen</span>
+                        </div>
+                    </mat-expansion-panel>
+
+                    <mat-expansion-panel class="mat-elevation-z0 mar-top remove-mat-expansion-panel-padding "
+                        (opened)="mesPanelOpen = true" (closed)="mesPanelOpen = false" hideToggle>
+                        <mat-expansion-panel-header class="panel-sp" style="box-shadow: none; padding:0px;">
+                            <div class="panel-header">
+                                <div class="header-left">
+                                    <img class="arrow-drop-down" [class.rotate]="mesPanelOpen"
+                                        src="assets/icons/arrow-drop-down.svg">
+                                    <div>
+                                        <img class="account-icon" src="assets/icons/account-circle.svg">
+                                        <span class="panel-headline">Direktnachrichten</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel-header>
+                        <div class="scrollableContactDiv">
+                            <!--Hier werden die Kontakte reingerendert.-->
+                            <div class="contact-div" (click)="openTalk(user)">
+                                <div>
+                                    <img src="{{user.iconPath}}">
+                                    <div [class.greenDot]="user.getAktive()"  class="stateDot">
+                                    </div>
+                                </div>
+                                <span >{{user.name}} (Du)</span>
+                            </div>
+
+                            <div *ngFor="let u of userList" class="contact-div"  (click)="openTalk(u)">
+                                <div>
+                                    <img src="{{u.iconPath}}">
+                                    <div [class.greenDot]="u.getAktive()" class="stateDot"></div>
+                                </div>
+                                <span >{{u.name}}</span>
+                            </div>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </mat-drawer>
+    </mat-drawer-container>
+</div>
+<div class="example-sidenav-content sidenav-content">
+
+    <button type="button" mat-button (click)="openCloseSideMenu()">
+        <img class="open-sidenav" *ngIf="sideMenuHidden" src="assets/icons/open-sidenav.svg">
+        <img class="close-sidenav" *ngIf="!sideMenuHidden" src="assets/icons/close-sidenav.svg">
+        <span *ngIf="!sideMenuHidden">Workspace-Menü schließen</span>
+        <span *ngIf="sideMenuHidden">Workspace-Menü öffnen</span>
+    </button>
+</div>

@@ -1,0 +1,265 @@
+.profileOuterDiv {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.userAll {
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    left: 50px;
+    top: 250px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 30px;
+
+}
+
+.profile {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    align-items: center;
+    gap: 10px;
+    top: 25px;
+    right: 25px;
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: fit-content;
+
+    &:hover {
+        .userName {
+            color: #797EF3;
+        }
+
+        .arrowImg {
+            content: url('/angular-projects/dabubble/assets/img/arrow-down-hover.svg');
+        }
+    }
+}
+
+.userName {
+    font-size: 32px;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+        max-width: 400px;
+    }
+}
+
+.charImgDiv {
+    position: relative;
+    justify-content: center;
+}
+
+.avatarImg {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.arrowImg {
+    cursor: pointer;
+}
+
+.choiceDialog {
+    position: absolute;
+    right: 50px;
+    top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    background-color: white;
+    width: 280px;
+    box-sizing: border-box;
+    height: 180px;
+    padding: 30px;
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    z-index: 3;
+}
+
+.dialogGrey {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0px;
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.stateDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #ADB0D9;
+    right: 0px;
+    bottom: 0px;
+    border: 2px white solid;
+}
+
+.greenDot {
+    background-color: #92C83E;
+}
+
+.smallThickBorder {
+    //width: 62px;
+    border: 3px solid #D9D9D9;
+    margin: 8px 41%;
+    border-radius: 50px;
+}
+
+.textImgDiv {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    img {
+        display: none;
+    }
+}
+
+.textImgDivHoverStyle {
+    background-color: #eceefe;
+    color: #535AF1;
+}
+
+.accountIcon {
+    width: 30px;
+}
+
+.accountIconHoverStyle {
+    content: url('/angular-projects/dabubble/assets/icons/account-circle-hover.svg');
+}
+
+.logoutIconHoverStyle {
+    content: url('/angular-projects/dabubble/assets/icons/logout-hover.svg');
+}
+
+@keyframes mobileSlideIn {
+    from {
+        transform: translateY(250px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width:1220px) {
+    .userName {
+        display: none;
+    }
+}
+
+@media (max-width:830px) {
+
+    .profileOuterDiv {
+        position: unset;
+
+    }
+
+    .profile {
+        top: 13px;
+        right: 13px;
+    }
+
+    .avatarImg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .userName {
+        display: none;
+    }
+
+    .arrowImg {
+        display: none;
+    }
+
+    .choiceDialog {
+        align-items: unset;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        top: unset;
+        width: 100vw;
+        border-radius: 30px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        gap: 25px;
+        padding-bottom: 45px;
+        height: unset;
+        transform: translateY(250px);
+        animation: mobileSlideIn 225ms ease-in-out 100ms forwards;
+    }
+
+    .textImgDiv {
+        width: 155px;
+        border-radius: 30px;
+        justify-content: center;
+        padding: 10px;
+
+        img {
+            display: block;
+        }
+
+        &:active {
+            background-color: #eceefe;
+            color: #535AF1;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .profile {
+        gap: 0px;
+    }
+}
+
+@media (max-width:400px) {
+    .profile {
+        top: 7px;
+        right: 7px
+    }
+
+    .avatarImg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .stateDot {
+        width: 9px;
+        height: 9px;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .choiceDialog {
+        gap: 10px;
+        padding: 15px;
+        padding-bottom: 20px;
+    }
+}

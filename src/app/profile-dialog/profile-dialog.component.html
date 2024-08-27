@@ -1,0 +1,60 @@
+<div class="profileContainer">
+    <div *ngIf="!edit" class="profileDialog ">
+        <div class="firstLine">
+            <div class="nunitoBlack fs24">Profil</div>
+            <img (click)="closeDialog()" class="closeIcon" src="assets/img/close.svg">
+        </div>
+        <div>
+            <img class="imgProfile" src="{{user.iconPath}}">
+        </div>
+        <div class="firstLine">
+            <div class="nunitoBlack fs32">{{user.name}}</div>
+            <a *ngIf="!screen.mobileScreenWidth()" class="edit" (click)="editData()">Bearbeiten</a>
+            <img *ngIf="screen.mobileScreenWidth()" class="editPencil" (click)="editData()"
+                src="assets/icons/edit-pencil.svg">
+        </div>
+        <div class="styleState">
+            <div class="dot"></div>
+            <div class="state">{{user.status}}</div>
+        </div>
+        <div class="styleMail">
+            <img src="assets/img/mail.svg">
+            <div>
+                <div class="nunitoBlack fs20">E-Mail-Adresse</div>
+                <a class="userMail" href="mailto:{{user.email}}">{{user.email}}</a>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="edit" class="profileDialog" [class.mobileEdit]="edit">
+        <div class="firstLine">
+            <div *ngIf="edit" class="nunitoBlack fs24">Dein Profil bearbeiten</div>
+            <div *ngIf="!edit" class="nunitoBlack fs24">Profil</div>
+            <img (click)="closeDialog()" style="cursor: pointer;" src="assets/img/close.svg">
+        </div>
+        <div>
+            <img class="imgProfile" src="{{user.iconPath}}">
+        </div>
+        <div class="inputContainer" [formGroup]="registerForm">
+            <div class="editLabel">
+                <img src="assets/img/accountNameIcon.svg">
+                <div class="nunitoBlack fs20">Vollständiger Name</div>
+            </div>
+            <div class="editInput"><input id="nameEdit" formControlName="name" class="editInputField"
+                    placeholder="{{user.name}}">
+            </div>
+            <div class="editLabel">
+                <img src="assets/img/mail.svg">
+                <div class="nunitoBlack fs20">E-Mail-Adresse</div>
+            </div>
+            <div class="editInput"><input id="emailEdit" formControlName="email" class="editInputField"
+                    placeholder="{{user.email}}">
+            </div>
+        </div>
+        <div class="buttonContainer">
+            <button (click)="closeDialog()" class="btn cancel ">Abbrechen</button>
+            <button class="btn weiter" (click)="save()">Speichern</button>
+        </div>
+
+    </div>
+</div>
+<div class="dialogGrey"></div>

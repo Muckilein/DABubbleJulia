@@ -1,0 +1,527 @@
+.privateMesOuterDiv {
+    height: 100%;
+}
+
+.direktMesHeader {
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 105px;
+    padding: 37px 36px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    gap: 15px;
+}
+
+.charImgDiv {
+    position: relative;
+    justify-content: center;
+}
+
+.smileEdit {
+    position: absolute;
+    left: 15px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.stateDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #ADB0D9;
+    right: 0px;
+    bottom: 0px;
+    border: 2px white solid;
+}
+
+.greenDot {
+    background-color: #92C83E;
+}
+
+.textAreaDirekt {
+    border: #ADB0D9 solid 1px;
+    border-radius: 30px;
+    padding: 20px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--Text-gray, #686868);
+        font-family: Nunito;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+}
+
+.editMessage {
+    left: 133px;
+}
+
+.time {
+    color: var(--Text-gray, #686868);
+    font-family: Nunito;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.textareaDirektMessage {
+    padding: 0 45px 0 45px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.mainFieldDirektMessage {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: calc(100% - 300px);
+
+}
+
+.sendArrow {
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.messageArea {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.infoDiv {
+    width: 100%;
+}
+
+.chatIconButtom {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    padding: 0 45px 0 45px;
+    margin-bottom: 20px;
+}
+
+.dateIcon {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.message-div {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: all 225ms ease-in-out;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+    gap: 25px;
+
+    &:hover {
+        background-color: #eceefe;
+
+        .message {
+            background-color: white;
+        }
+
+        .message-right {
+            background-color: #444df2;
+        }
+
+        .add-reaction {
+            pointer-events: all;
+            opacity: 1;
+            right: 40px;
+        }
+
+        .popUpMessageContainer {
+            pointer-events: all;
+            right: 40px;
+            opacity: 1;
+        }
+
+        .popUpMessageContainerFlip {
+            left: 40px;
+        }
+
+
+    }
+}
+
+.messageFlip {
+    flex-direction: row-reverse;
+
+    .message {
+        border-radius: 30px;
+        border-top-right-radius: 0;
+        background-color: #797EF3;
+        color: white;
+    }
+
+    &:hover {
+        .message {
+            border-radius: 30px;
+            border-top-right-radius: 0;
+            background-color: #797EF3;
+            color: white;
+        }
+    }
+}
+
+.message-inner-div {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.message {
+    background-color: #eceefe;
+    padding: 13px;
+    width: fit-content;
+    font-size: 18px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    word-wrap: anywhere;
+}
+
+.message-right {
+    color: white;
+    background-color: #444df2;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+}
+
+.mes-name-clock {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 20px;
+    align-items: flex-end;
+
+    span:nth-of-type(2) {
+        color: #b7bade;
+    }
+}
+
+.popUpMessageContainerFlip {
+    right: unset;
+    left: 0px;
+
+
+}
+
+.popUpIcons {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100%;
+
+
+    &:hover {
+        background-color: #ECEEFE;
+    }
+}
+
+.pad0 {
+    padding: 0;
+}
+
+.popUpFlip {
+    border-radius: 25px;
+    border-bottom-right-radius: 0;
+}
+
+.popUpFlipContainer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.emoji-div {
+    position: absolute;
+    bottom: 135px;
+
+}
+
+.emoji-div-Edit {
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+    z-index: 3;
+
+}
+
+.emojiDivComment {
+    position: absolute;
+    bottom: -150px;
+    left: 200px;
+}
+
+.reactIcons {
+    padding: 3px 10px 3px 10px;
+    border: 1px solid #7e83f5;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.lila {
+    background-color: #cbcdec;
+}
+
+.popUpMessageContainer {
+    position: absolute;
+    right: 0px;
+    top: -21px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 100ms ease-out;
+}
+
+.popUpFlipContainer {
+
+    right: unset;
+    left: 0px;
+}
+
+.unHover {
+    transition: all 100ms ease-out;
+
+    &:hover {
+        .popUpMessageContainer {
+            display: none !important;
+        }
+    }
+}
+
+.popUpMessage {
+    display: flex;
+    gap: 5px;
+    border-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border: solid 1px #ADB0D9;
+    padding: 3px 20px 3px 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    align-items: center;
+}
+
+.charImgHeader {
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.charImg {
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.info {
+    padding: 0px 45px;
+    padding-bottom: 60px;
+    color: #686868;
+}
+
+
+.charImgInfo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.deleteUpload {
+    display: none;
+    position: absolute;
+    right: -30px
+}
+
+.upload {
+    position: relative;
+
+    &:hover {
+        .deleteUpload {
+            display: unset !important;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            z-index: 3;
+
+        }
+    }
+}
+
+.posUpload {
+    bottom: 165px;
+}
+
+
+@media (max-width:830px) {
+    .privateMesOuterDiv {
+        width: 100%;
+    }
+
+    .mainFieldDirektMessage {
+        height: calc(100% - 260px);
+    }
+
+    .direktMesHeader {
+        border-radius: 0px;
+        height: 80px;
+        padding: 10px 16px;
+    }
+
+    .textareaDirektMessage {
+        padding: 0px 16px;
+    }
+
+    .info {
+        padding: 0px 16px;
+        padding-bottom: 45px;
+    }
+
+
+    .iconContainerTextArea {
+        left: 40px;
+    }
+
+    .sendArrow {
+        right: 40px;
+    }
+
+    .chatIconButtom {
+        padding: 0px 16px;
+    }
+}
+
+@media (max-width:500px) {
+    .editMessage {
+        left: 0px;
+    }
+}
+
+
+@media (max-width:400px) {
+    .direktMesHeader {
+        height: unset;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .charImgHeader {
+        width: 30px;
+        height: 30px;
+    }
+
+    .stateDot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .mainFieldDirektMessage {
+        height: calc(100% - 200px);
+    }
+
+    .info {
+        padding-bottom: 30px;
+    }
+
+    .textareaDirektMessage {
+        padding: 0px 10px;
+    }
+
+    .textAreaDirekt {
+        padding: 15px;
+        height: 130px;
+    }
+
+    .iconContainerTextArea {
+        gap: 0px;
+        left: 15px;
+
+        div {
+            margin: 0px 5px
+        }
+
+        img {
+            width: 34px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .sendArrow {
+        width: 34px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .editButtonContainer {
+        gap: 0;
+    }
+
+    .emoji-div-Edit {
+        position: absolute;
+        bottom: 50px;
+        left: -25px;
+        z-index: 3;
+    }
+
+    .emojiDivComment {
+        left: 5px;
+        z-index: 3;
+        top: 60px;
+    }
+
+    .emoji-div {
+        left: -25px;
+
+    }
+
+    .posPop {
+        right: unset;
+        left: -20px;
+    }
+}

@@ -1,0 +1,38 @@
+<app-header [sideMenuHidden]="sideMenuHidden" [threadList]="threadList" [user]="user" [userList]="userList"
+  [talkList]="talkList" (callOpenChannel)="callOpenChan($event)" (isOpen)="setNewMessage($event)"
+  (callOpenTalk)="openMessage($event)" (toggleSideMenu)="toggleSideMenu($event)"></app-header>
+
+<div class="main-page">
+
+  <app-side-menu (newItemEvent)="setOpen($event)" (newItemEventUser)="setOtherUser($event)"
+    (isOpen)="setNewMessage($event)" (newItemEventChanel)="setChannelNumber($event)"
+    (newItemEventMenuHidden)="setSideMenuHidden($event)" [user]="user" [userList]="userList" [threadList]="threadList"
+    class="side-menu" [class.width100Percent]="!sideMenuHidden&&screen.mobileScreenWidth()" [talkList]="talkList"
+    (channelOpen)="setChannelBoolean($event)"></app-side-menu>
+
+  <div class="main-content-div" *ngIf="setMobileView()" #mainContentDiv>
+
+    <app-channel-window class="channel-window" *ngIf="showChannel()" [threadList]="threadList" [number]="number"
+      [user]="user" [userList]="userList" (newItemEventChannel)="setThreadC($event)" [sideMenuHidden]="sideMenuHidden"
+      [openChat]="openChat" (callOpenTalk)="openMessage($event)"></app-channel-window>
+
+    <app-private-message class="privateMessage" *ngIf="showPrivateMessage()" [user]="user"
+      (newItemEventLoggedUser)="setLoggedInUser($event)" (callOpenUser)="openMessage($event)" [talkList]="talkList"
+      (sendCurrentTalkId)="setCurrentTalkId($event)" [userList]="userList" [oldTalkId]="oldTalkId"
+      [currentTalkData]="currentTalkData"></app-private-message>
+
+    <app-send-new-message style="height:100%" [threadList]="threadList" [talkList]="talkList" [user]="user"
+      [userList]="userList" (callOpenChannel)="callOpenChan($event)" (isOpen)="setNewMessage($event)"
+      (areaText)="setAreaText($event)" (areaTextPrivate)="setAreaTextPrivate($event)"
+      (callOpenTalk)="openMessage($event)" (dataUploadChannel)="setdataUploadChannel($event)"
+      (dataUploadPrivate)="setdataUploadPrivate($event)" *ngIf="newMessOpen"></app-send-new-message>
+
+  </div>
+
+  <app-side-menu-thread *ngIf="openChat&&setMobileThreadView()" class="sideMenuThread" [threadList]="threadList"
+    [user]="user" [threadC]="threadC" [userList]="userList" (newSetOpen)="setOpenValue($event)"
+    (newItemEventOpenChat)="setOpenValue($event)" (callOpenTalk)="openMessage($event)" [channelOpen]="channelOpen"
+    [sideMenuHidden]="sideMenuHidden"></app-side-menu-thread>
+  <app-main-dialog-profil [user]="user" (unsubscribe)="unsubscribe($event)"></app-main-dialog-profil>
+
+</div>

@@ -1,0 +1,683 @@
+.threadOuterDiv {
+    height: 100%;
+}
+
+.mat-drawer-div {
+    position: relative;
+    background-color: #eceefe;
+    height: 100%;
+    transition: all 225ms ease-in-out;
+}
+
+.posAddr {
+    bottom: 60px;
+}
+
+.sidenav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    width: 485px;
+    border-radius: 30px;
+    padding: 37px 0px;
+}
+
+.sidenav-header {
+    background-color: white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 484px;
+    height: 105px;
+    padding: 37px 36px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+}
+
+.sidenav-headline {
+    font-family: 'Nunito';
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.tag-icon {
+    width: 16px;
+    margin: 0px 3px;
+}
+
+.thread-name {
+    color: #7e83f5;
+}
+
+.close-icon {
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/img/close-hover.svg');
+    }
+}
+
+.sidenav-body {
+    overflow: auto;
+    margin-top: 70px;
+    height: calc(100% - 221px);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.thread-starter {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.message-div {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: all 225ms ease-in-out;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+    transition: all 100ms ease-out;
+    gap: 15px;
+
+    &:hover {
+        background-color: #eceefe;
+
+        .message {
+            background-color: white;
+        }
+
+        .add-reaction {
+            pointer-events: all;
+            opacity: 1;
+            right: 40px;
+        }
+    }
+}
+
+.charImg {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.message-div-right {
+    flex-direction: row-reverse;
+
+    &:hover {
+        .message-right {
+            background-color: #797EF3;
+        }
+
+        .add-reaction-right {
+            right: unset;
+            left: 40px;
+        }
+    }
+}
+
+
+
+.message-inner-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-inner-div-right {
+    align-items: flex-end;
+}
+
+.mes-name-clock {
+    display: flex;
+    margin-bottom: 10px;
+
+    span:nth-of-type(2) {
+        color: #b7bade;
+    }
+}
+
+.editMessageThread {
+    position: absolute;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    border-radius: 25px;
+    border-top-left-radius: 0;
+    color: var(--Black, #000);
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    top: 65px;
+    left: 50px;
+    width: 250px;
+    cursor: pointer;
+    z-index: 2;
+
+    .editMessageT {
+        padding: 10px 20px 10px 20px;
+
+        &:hover {
+            border-radius: 30px;
+            color: #444DF2;
+            background-color: #eceefe;
+        }
+    }
+}
+
+.mes-name-clock-right {
+    flex-direction: row-reverse;
+}
+
+.mes-name {
+    padding-right: 10px;
+}
+
+.mes-name-right {
+    padding-right: 0px;
+    padding-left: 10px;
+}
+
+.message {
+    background-color: #eceefe;
+    padding: 13px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    //line-height: 26px;
+    word-wrap: anywhere;
+}
+
+.message-right {
+    color: white;
+    background-color: #797EF3;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+}
+
+.reactions {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.reaction-emoji-counter {
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 45px;
+    transition: all 100ms ease-out;
+
+    img {
+        width: 24px;
+    }
+
+    &:hover {
+        .reactions-tooltip {
+            display: flex;
+        }
+    }
+}
+
+.add-reaction-icon {
+    cursor: pointer;
+    width: 34px;
+    background-color: white;
+    border-radius: 30px;
+    margin-left: 5px;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/add-reaction-hover.svg');
+    }
+}
+
+.reactions-tooltip {
+    display: none;
+    align-items: center;
+    position: absolute;
+    width: max-content;
+    right: 0px;
+    top: -122px;
+    flex-direction: column;
+    background-color: #444df2;
+    border-radius: 30px;
+    border-bottom-left-radius: 0px;
+    padding: 15px 10px;
+
+    span {
+        color: white;
+        font-size: 16px;
+    }
+
+    img {
+        padding: 0px;
+        width: 30px;
+        margin-bottom: 8px;
+    }
+}
+
+.reactions-username {
+    span {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    span:nth-of-type(2) {
+        padding-left: 7px;
+    }
+}
+
+.reactIconsDiv {
+    display: flex;
+    gap: 3px;
+    max-width: 275px;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.add-reaction-right {
+    right: unset;
+    left: 0px;
+}
+
+.menu {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 100%;
+    box-sizing: border-box;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        background-color: #ECEEFE;
+    }
+}
+
+.changeFace {
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/add-reaction-hover.svg');
+    }
+}
+
+.answer-counter-div {
+    margin-right: 65px;
+    margin-top: 15px;
+    border: 1px solid #b7bade;
+    width: 100%;
+}
+
+.answer-counter {
+    position: absolute;
+    bottom: -9px;
+    left: 0px;
+    padding-right: 20px;
+    min-width: 107px;
+    background-color: white;
+    color: #b7bade;
+    padding-left: 20px;
+}
+
+.answers-div {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.textfield-div {
+    background-color: white;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    right: 0px;
+    height: 104px;
+    //width: 444px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    textarea {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid #b7bade;
+        border-radius: 20px;
+        resize: none;
+    }
+}
+
+.margin-left {
+    margin-left: 20px;
+}
+
+.textareaDirektMessage {
+    padding: 0px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.textAreaDirekt {
+    border: #ADB0D9 solid 1px;
+    border-radius: 30px;
+    padding: 20px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: var(--Text-gray, #686868);
+    }
+}
+
+.sendArrow {
+    position: absolute;
+    right: 45px;
+    bottom: 15px;
+    cursor: pointer;
+}
+
+.emojiDivUpper {
+    position: absolute;
+    z-index: 3;
+    bottom: -230px;
+    right: 0px;
+    height: 229px;
+    overflow: auto;
+    border: 1px solid lightgray;
+}
+
+.emojiDivUpperRight {
+    right: unset;
+    left: 10px;
+
+}
+
+.posUpload {
+    bottom: 165px;
+}
+
+.emojiDivLower {
+    bottom: -210px;
+    left: 15px;
+    right: unset;
+}
+
+.emojiDivTA {
+    position: absolute;
+    bottom: 60px;
+    z-index: 3;
+}
+
+.reactIconInTooltipDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.reactIconInTooltip {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    scale: 2.5;
+}
+
+
+
+.lila {
+    background-color: #cbcdec;
+}
+
+.iconContainerTextArea {
+    left: 15px;
+}
+
+.deleteUpload {
+    display: none;
+    position: absolute;
+    right: -30px
+}
+
+.upload {
+    position: relative;
+
+    &:hover {
+        .deleteUpload {
+            display: unset !important;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            z-index: 3;
+
+        }
+    }
+}
+
+@media (max-width:1400px) {
+    .threadOuterDiv {
+        width: 100%;
+    }
+
+    .sidenav {
+        width: 100%;
+    }
+
+    .margin-left {
+        margin-left: 0px;
+    }
+
+    .margin-mobile-left {
+        margin-left: 20px;
+    }
+
+    .sidenav-header {
+        width: 100%;
+    }
+}
+
+@media (max-width:830px) {
+
+    .emojiDivUpperRight {
+        right: unset;
+
+    }
+
+    .posAddr {
+        bottom: -320px;
+    }
+
+    .threadOuterDiv {
+        width: 100vw;
+    }
+
+    // .margin-left {
+    //     margin-left: 0px;
+    // }
+
+    .sidenav {
+        width: 100vw;
+        border-radius: 0px;
+        padding: 20px 0px;
+    }
+
+    .sidenav-header {
+        width: 100%;
+        height: auto;
+        padding: 10px 16px;
+    }
+
+    .sidenav-body {
+        height: calc(100% - 180px);
+        margin-top: 29px;
+    }
+
+    .message-div {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        gap: 15px;
+    }
+
+    .char-img {
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        padding: 0px;
+    }
+
+    .answers-div {
+        height: unset;
+    }
+
+    .mobileDNone {
+        display: none;
+    }
+}
+
+@media (max-width:555px) {
+    .reactIconsDiv {
+        max-width: 200px;
+    }
+
+    .emojiDivTA {
+        bottom: 154px;
+    }
+}
+
+@media (max-width:400px) {
+    .sidenav {
+        padding: 0px;
+    }
+
+    .sidenav-header {
+        padding: 6px 10px;
+        padding-right: 3px;
+    }
+
+    .sidenav-headline {
+        font-size: 18px;
+    }
+
+    .close-icon {
+        width: 34px;
+    }
+
+    .sidenav-body {
+        height: calc(100% - 194px);
+        margin-top: 52px;
+    }
+
+    .answer-counter-div {
+        margin-right: 31px;
+
+    }
+
+    .answer-counter {
+        bottom: -8px;
+        padding-right: 0px;
+        min-width: 95px;
+        padding-left: 12px;
+    }
+
+    .message-div {
+        padding: 5px 10px;
+        gap: 10px;
+    }
+
+    .changeFace {
+        width: 34px;
+        padding: 0px;
+    }
+
+    .editMessageThread {
+        left: -20px;
+    }
+
+    .charImg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .emojiDivUpperRight {
+        right: unset;
+        left: -20px;
+    }
+
+    .reactIconsDiv {
+        max-width: 180px;
+    }
+
+    .textareaDirektMessage {
+        padding: 0px 10px;
+    }
+
+    .textAreaDirekt {
+        padding: 15px;
+        height: 130px;
+    }
+
+    .iconContainerTextArea {
+        gap: 0px;
+        left: 15px;
+
+        div {
+            margin: 0px 5px
+        }
+
+        img {
+            width: 34px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .menu {
+        width: 34px !important;
+        height: 35px !important;
+    }
+
+    .sendArrow {
+        width: 34px;
+        right: 20px;
+        bottom: 20px;
+    }
+}

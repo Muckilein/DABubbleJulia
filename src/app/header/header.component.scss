@@ -1,0 +1,270 @@
+.headerContainer {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 75px 75px;
+    padding-bottom: 0px;
+}
+
+.padding-main-page {
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 25px;
+}
+
+.field {
+    display: flex;
+    flex-direction:
+        column;
+    align-items:
+        flex-start;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 30px;
+
+    &:hover {
+        background-color: #ECEEFE; //#cbcdec;
+    }
+}
+
+.searchResults {
+    position: absolute;
+    width: fit-content;
+    min-width: 200px;
+    height: 500px;
+    overflow-y: scroll;
+    left: 350px;
+    top: 120px;
+    margin-left: 100px;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid grey;
+    padding: 10px;
+    z-index: 4;
+
+    img {
+        position: unset !important;
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+.space-betw {
+    justify-content: space-between;
+}
+
+.logoContainer {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+}
+
+.openCloseSidenav {
+    cursor: pointer;
+    display: flex;
+    margin-left: 20px;
+    width: 32px;
+
+    &:hover {
+        .open-sidenav {
+            content: url("/angular-projects/dabubble/assets/icons/close-sidenav-hover.svg");
+        }
+    }
+}
+
+.searchInput {
+    position: relative;
+    width: calc(100% - 860px);
+    margin-left: 119px;
+    min-width: 505px;
+
+    input {
+        width: 100%;
+        padding: 18px 45px;
+        box-sizing: border-box;
+        border-radius: 40px;
+        border: none;
+        color: #686868;
+        font-size: 24px;
+
+        &:focus-visible {
+            outline: none;
+        }
+    }
+
+    img {
+        cursor: pointer;
+        position: absolute;
+        right: 35px;
+        top: 16px;
+    }
+
+    &:focus-within {
+        img {
+            content: url('/angular-projects/dabubble/assets/icons/search-focus.svg');
+        }
+    }
+}
+
+.loginHeaderRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+
+.makeAccount {
+    cursor: pointer;
+    font-family: 'Figtree';
+    font-size: 18px;
+    font-weight: 400;
+    color: #797EF3;
+    text-decoration: none;
+    padding: 10px 15px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+
+    &:hover {
+        border-radius: 30px;
+        border-color: #ADB0D9;
+        font-weight: 500;
+        color: #444df2;
+    }
+}
+
+
+.mobileHeader {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 7px;
+    font-size: 20px;
+    font-weight: 700;
+
+    img:nth-of-type(2) {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width:1340px) {
+    .searchInput {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:1250px) {
+    .headerContainer {
+        padding-left: 25px;
+    }
+}
+
+@media(max-width:1110px) {
+    .searchInput {
+        min-width: 425px;
+
+        img {
+            right: 25px;
+        }
+    }
+}
+
+@media (max-width:900px) {
+    .openCloseSidenav {
+        margin-left: 5px;
+    }
+
+    .searchInput {
+        margin-left: 5px;
+    }
+
+    .searchInput {
+        min-width: 390px;
+
+        input {
+            padding: 18px 0px;
+            padding-left: 15px;
+        }
+    }
+}
+
+
+@media (max-width:830px) {
+    .headerContainer {
+        padding: 5px 16px;
+        padding-bottom: 0px;
+    }
+
+    .logoContainer {
+        img:nth-child(1) {
+            height: 45px;
+        }
+
+        img:nth-child(2) {
+            height: 20px;
+        }
+    }
+
+    .searchInput {
+        display: none;
+    }
+
+    .logoContainer {
+        position: absolute;
+
+    }
+
+    .searchResults {
+        display: none;
+    }
+}
+
+@media (max-width:400px) {
+    .headerContainer {
+        padding: 10px;
+    }
+
+    .headerContainerMobilePadding {
+        padding-left: 3px;
+    }
+
+    .logoContainer {
+        height: unset;
+        gap: 8px;
+
+        img:nth-child(1) {
+            height: 33px;
+        }
+
+        img:nth-child(2) {
+            height: 16px;
+        }
+    }
+
+
+    .mobileHeader {
+        height: unset;
+        gap: 0px;
+
+        img:nth-child(1) {
+            width: 34px;
+        }
+
+        img:nth-child(2) {
+            width: 36px;
+            height: 36px;
+            margin-right: 9px;
+        }
+
+        span {
+            font-size: 18px;
+        }
+    }
+}

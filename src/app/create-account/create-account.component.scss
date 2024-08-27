@@ -1,0 +1,293 @@
+.logInDialog {
+    position: absolute;
+    width: 606px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 50px;
+    gap: 35px;
+    box-sizing: border-box;
+}
+
+.logoContainer {
+    position: absolute;
+    display: flex;
+    height: 70px;
+    left: 75px;
+    top: 75px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.headline {
+    color: #444DF2;
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.loginDis {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: center;
+}
+
+.weiterContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.disab {
+    &:disabled {
+        background-color: #686868;
+    }
+}
+
+
+
+.input {
+    position: relative;
+    width: 500px;
+    height: 60px;
+    background-color: #ECEEFE;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 4px 15px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+
+    input {
+        border: none;
+        background-color: #ECEEFE;
+        font-family: 'Nunito';
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    span {
+        position: absolute;
+        bottom: -24px;
+        left: 0px;
+        color: #ED1E79;
+        position: absolute;
+        bottom: -24px;
+        left: 0px;
+        color: #ED1E79;
+    }
+
+    &:hover {
+        border-color: #686868;
+    }
+
+    &:focus-within {
+        border-color: #535AF1;
+    }
+}
+
+.pwForget {
+    color: var(--Purple-2, #797EF3);
+    font-family: Figtree;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.or {
+    background-color: white;
+    position: absolute;
+    width: 50px;
+    height: 36px;
+    top: calc(50% - 24px);
+    left: calc(50% - 40px);
+    font-family: Nunito;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 15px;
+}
+
+.arrowBack {
+    position: absolute;
+    left: 40px;
+    cursor: pointer;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/img/arrow-back-hover.svg');
+    }
+}
+
+.discription {
+    span {
+        a {
+            padding: 5px 0px;
+            text-decoration: none;
+            border-radius: 30px;
+            color: #797EF3;
+        }
+    }
+
+    &:hover {
+        span {
+            a {
+                color: #444DF2;
+                background-color: #ECEEFE;
+                font-weight: 500;
+            }
+        }
+
+        #privacyAgreement+::before {
+            background-color: #ECEEFE;
+        }
+    }
+
+}
+
+#privacyAgreement {
+    display: none;
+}
+
+#privacyAgreement+::before {
+    // wählt wegen + den span aus
+    cursor: pointer;
+    content: "\2713";
+    height: 13px;
+    width: 13px;
+    display: inline-block;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #797EF3;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    padding-left: 3px;
+    box-sizing: content-box;
+    margin-right: 10px;
+    color: white;
+}
+
+.red {
+    color: red !important;
+}
+
+#privacyAgreement:checked+*::before {
+    content: "\2713";
+    color: #797EF3;
+    border-color: #444DF2;
+    background-color: #ECEEFE;
+}
+
+#checkSpan {
+    font-size: 16px;
+}
+
+@media screen and (max-width:830px) {
+    .logInDialog {
+        width: 398px;
+        height: fit-content;
+        left: calc(50% - 196px);
+        top: calc(50% - 276px);
+        padding: 20px;
+        gap: 20px;
+
+        .headline {
+            font-size: 32px;
+        }
+    }
+
+    .input {
+        width: 100%;
+        height: 50px;
+        // gap: 10px;
+        // padding: 13px 32px 13px 32px;
+        margin-bottom: 10px;
+    }
+
+    .logoContainer {
+        position: absolute;
+        width: 200px;
+        left: calc(50% - 110px);
+        top: 70px;
+        align-items: center;
+
+        img:nth-of-type(1) {
+            height: 55px;
+        }
+
+        .logoTitle {
+            height: 24px;
+        }
+    }
+
+    .impData {
+        bottom: 50px;
+    }
+
+    .arrowBack {
+        left: 20px;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .logInDialog {
+        width: 320px;
+        height: fit-content;
+        left: calc(50% - 160px);
+        top: calc(50% - 250px);
+        gap: 12px;
+
+        .headline {
+            font-size: 26px;
+            margin-bottom: 0px;
+        }
+    }
+
+    .btn {
+        padding: 10px 10px;
+    }
+
+    .input {
+        width: 300px;
+        // padding: 10px 25px 10px 25px;
+    }
+
+    .logoContainer {
+        top: 15px;
+    }
+
+    .impData {
+        bottom: 15px;
+        gap: 10px;
+    }
+}
+
+@media (max-height:930px) {
+    .logoContainer {
+        top: 15px;
+    }
+
+    .impData {
+        bottom: 15px;
+        gap: 10px;
+    }
+}
+
+@media (max-height:930px) and (min-width:831px) {
+    .impData {
+        width: 940px;
+        left: calc(50% - 457px);
+    }
+}

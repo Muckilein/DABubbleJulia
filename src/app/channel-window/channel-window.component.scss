@@ -1,0 +1,807 @@
+.channel-outer-div {
+    position: relative;
+    height: 100%;
+}
+
+.channel-header {
+    background-color: white;
+    z-index: 1;
+    justify-content: space-between;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 105px;
+    padding: 37px 36px;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.08);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.channel-header-left {
+    cursor: pointer;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 6px 10px;
+    gap: 10px;
+    transition: all 100ms ease-out;
+
+    span {
+        max-width: 250px;
+        height: 22px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &:hover {
+        background-color: #ECEEFE;
+
+        span {
+            color: #7e83f5;
+        }
+
+        .tag-icon {
+            content: url('/angular-projects/dabubble/assets/icons/tag-hover.svg');
+        }
+
+        .arrow-down {
+            content: url('/angular-projects/dabubble/assets/img/arrow-down-hover.svg');
+        }
+    }
+}
+
+.emojiDiv {
+    bottom: -415px;
+    left: 92px;
+    z-index: 3;
+}
+
+.emoji-div {
+    left: 170px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.deleteUpload {
+    display: none;
+    position: absolute;
+    right: -30px
+}
+
+.upload {
+    position: relative;
+
+    &:hover {
+        .deleteUpload {
+            display: unset !important;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            z-index: 3;
+
+        }
+    }
+}
+
+.posAbsChan {
+    position: absolute;
+}
+
+.posAbsChanFlip {
+    position: absolute;
+    right: 0px;
+    border-radius: 30px;
+    border-bottom-right-radius: 0;
+}
+
+
+
+.reactIconsDiv {
+    gap: 3px;
+    max-width: 500px;
+    overflow-y: auto;
+}
+
+.lila {
+    background-color: #cbcdec;
+    border-radius: 20px;
+}
+
+.hoverStyleHeaderLeft {
+    background-color: #ECEEFE;
+    transition: all 100ms ease-out;
+
+    span {
+        font-size: 24px;
+        font-weight: 700;
+        color: #7e83f5;
+    }
+
+    .tag-icon {
+        content: url('/angular-projects/dabubble/assets/icons/tag-hover.svg');
+    }
+
+    .arrow-down {
+        content: url('/angular-projects/dabubble/assets/img/arrow-down-hover.svg');
+    }
+}
+
+.posUpload {
+    bottom: 165px;
+}
+
+.tag-icon {
+    width: 32px;
+}
+
+.arrow-down {
+    width: 32px;
+}
+
+.channel-header-right {
+    justify-content: space-between;
+}
+
+.added-members {
+    cursor: pointer;
+    position: relative;
+    width: 142px;
+    border-radius: 20px;
+    justify-content: flex-end;
+    padding: 3px 10px;
+    transition: all 100ms ease-out;
+
+    img {
+        object-fit: cover;
+        height: 40px;
+        width: 40px;
+        border: 3px solid white;
+        border-radius: 30px;
+
+    }
+
+    img:nth-of-type(1) {
+        z-index: 3;
+
+    }
+
+    img:nth-of-type(2) {
+        z-index: 2;
+        left: 35px;
+        position: absolute;
+
+    }
+
+    img:nth-of-type(3) {
+        z-index: 1;
+        left: 0px;
+        position: absolute;
+    }
+
+    span {
+        width: 30px;
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background-color: #ECEEFE;
+        color: #7e83f5;
+    }
+}
+
+
+.hoverStyleChannelMembers {
+    background-color: #ECEEFE;
+    color: #7e83f5;
+}
+
+.add-people {
+    cursor: pointer;
+    width: 40px;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/add-people-hover.svg');
+    }
+}
+
+.hoverStyleAddPeople {
+    content: url('/angular-projects/dabubble/assets/icons/add-people-hover.svg');
+}
+
+.channel-body {
+    height: calc(100% - 293px);
+    margin-top: 106px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.positionStartChannel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: calc(100% - 364px);
+}
+
+
+.message-div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+    box-sizing: border-box;
+    transition: all 225ms ease-in-out;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    margin-top: 25px;
+}
+
+.charImg {
+    object-fit: cover;
+    width: 70px;
+    height: 70px;
+    padding-right: 15px;
+    border-radius: 50%;
+}
+
+.popUpMessageContainer {
+    right: 0px;
+    top: -21px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 100ms ease-out;
+}
+
+.popUpFlipContainer {
+    right: unset;
+    left: 0px;
+}
+
+.unHover {
+    transition: all 100ms ease-out;
+
+    &:hover {
+        .popUpMessageContainer {
+            display: none !important;
+        }
+    }
+}
+
+.popUpIcons {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 100%;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        background-color: #ECEEFE;
+    }
+}
+
+.addReaction {
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/add-reaction-hover.svg');
+    }
+}
+
+.answerIcon {
+    cursor: pointer;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/img/answer-icon-hover.svg');
+    }
+}
+
+.popUpMessage {
+    gap: 5px;
+    border-radius: 25px;
+    border-bottom-right-radius: 0px;
+    border: solid 1px #ADB0D9;
+    padding: 3px 20px 3px 20px;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+}
+
+.innerContainer {
+    position: relative;
+    align-items: flex-start;
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0px;
+}
+
+.flippInnerContainer {
+    flex-direction: row-reverse;
+    padding-right: 0px;
+}
+
+.message-inner-div {
+    position: relative;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 40px;
+
+    transition: all 100ms ease-out;
+
+    &:hover {
+        background-color: #eceefe;
+
+        .message {
+            background-color: white;
+        }
+
+        .messageRightStyle {
+            background-color: #797EF3;
+        }
+
+        .popUpMessageContainer {
+            pointer-events: all;
+            right: 40px;
+            opacity: 1;
+        }
+
+        .popUpFlipContainer {
+            left: 40px;
+        }
+    }
+}
+
+.messageContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mes-name-clock {
+    display: flex;
+    margin-bottom: 10px;
+
+    span:nth-of-type(2) {
+        color: #b7bade;
+    }
+}
+
+.mes-name {
+    padding-right: 10px;
+}
+
+.messageRight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rowReverse {
+    flex-direction: row-reverse;
+}
+
+.editButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+}
+
+.messageDataPart {
+    display: flex;
+    align-items: flex-end;
+    padding-top: 30px;
+    gap: 30px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.message {
+    background-color: #eceefe;
+    padding: 13px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    width: fit-content;
+    word-wrap: anywhere;
+}
+
+.messageRightStyle {
+    color: white;
+    background-color: #797EF3;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 20px;
+}
+
+.reactions {
+    margin-top: 10px;
+    position: relative;
+}
+
+.add-reaction-icon {
+    cursor: pointer;
+    width: 34px;
+    background-color: white;
+    border-radius: 30px;
+    margin-left: 5px;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/icons/add-reaction-hover.svg');
+    }
+}
+
+.answers-info {
+    display: flex;
+    margin-top: 10px;
+}
+
+.answerInfoFlip {
+    justify-content: flex-end;
+}
+
+.answers-counter {
+    cursor: pointer;
+    color: #444df2;
+    margin-right: 20px;
+    transition: all 100ms ease-out;
+
+    span:nth-of-type(1) {
+        padding-right: 5px;
+    }
+
+    &:hover {
+        font-weight: 700;
+    }
+}
+
+.last-answer {
+    color: grey;
+
+    span:nth-of-type(1) {
+        padding-right: 5px;
+    }
+}
+
+.textAreaDirekt {
+    border: #ADB0D9 solid 1px;
+    border-radius: 30px;
+    padding: 20px;
+    resize: none;
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    position: relative;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #686868;
+        font-family: Nunito;
+        font-size: 18px;
+        font-weight: 400;
+    }
+}
+
+.textareaDirektMessage {
+    padding: 0 45px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.sendArrow {
+    right: 70px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+.dateIcon {
+    position: relative;
+    width: calc(100% - 80px);
+    margin-top: 15px;
+    margin-left: 40px;
+}
+
+.smileEdit {
+    cursor: pointer;
+    left: 10px;
+    bottom: 10px;
+    transition: all 100ms ease-out;
+
+    &:hover {
+        content: url('/angular-projects/dabubble/assets/img/smiley-icon-hover.svg');
+    }
+}
+
+@media (max-width:1560px) {
+    .channel-header-left-threeWindowShownMobile {
+        padding: 6px 0px;
+        gap: 0px;
+
+        span {
+            max-width: 120px;
+        }
+    }
+}
+
+@media (max-width:1050px) {
+    .channel-header-left-sideMenuShownMobile {
+        padding: 6px 0px;
+        gap: 5px;
+
+        span {
+            max-width: 180px;
+        }
+    }
+}
+
+@media (max-width:960px) {
+    .emojiDiv {
+        bottom: -425px;
+    }
+
+    .channel-header-sideMenuShownMobile {
+        padding: 37px 10px;
+    }
+
+    .channel-header-left-sideMenuShownMobile {
+        gap: 0px;
+
+        span {
+            max-width: 100px;
+        }
+    }
+
+    .innerContainer-sideMenuShownMobile {
+        gap: 10px;
+    }
+
+    .message-inner-div-sideMenuShownMobile {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width:830px) {
+
+    .channel-header {
+        border-radius: 0px;
+        height: 60px;
+        padding: 10px 16px;
+    }
+
+    .channel-header-left {
+        font-size: 20px;
+        padding: 6px 10px;
+        gap: 10px;
+    }
+
+    .tag-icon {
+        width: 30px;
+    }
+
+    .added-members {
+        display: none;
+    }
+
+    .add-people {
+        width: 34px;
+    }
+
+    .channel-body {
+        height: calc(100% - 225px);
+        margin-top: 50px;
+    }
+
+    .positionStartChannel {
+        height: calc(100% - 285px);
+    }
+
+    .dataIcon {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+
+    .message-inner-div {
+        padding: 10px 20px;
+        gap: 20px;
+    }
+
+    .charImg {
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        padding: 0px;
+    }
+
+    .textareaDirektMessage {
+        padding: 0px 20px;
+    }
+
+    .iconContainerTextArea {
+        left: 35px;
+    }
+}
+
+@media (max-width:555px) {
+    .reactIconsDiv {
+        max-width: 200px;
+    }
+
+    .emojiDiv {
+        left: calc(50% - 199px);
+    }
+
+    .emoji-div {
+        left: 20px;
+        bottom: 152px;
+    }
+}
+
+@media (max-width:400px) {
+    .channel-header {
+        height: unset;
+        padding: 10px;
+    }
+
+    .channel-header-left {
+        gap: 5px;
+        padding: 0px;
+
+        span {
+            max-width: 190px;
+            font-size: 18px;
+        }
+    }
+
+    .tag-icon {
+        width: 22px;
+    }
+
+    .add-people {
+        width: 27px;
+    }
+
+    .channel-body {
+        height: calc(100% - 191px);
+    }
+
+    .positionStartChannel {
+        height: calc(100% - 257px) !important;
+    }
+
+    .message-div {
+        margin-top: 0px;
+        padding-bottom: 10px;
+    }
+
+    .messageDataPart {
+        padding-top: 15px;
+    }
+
+    .message-inner-div {
+        padding: 0px 10px;
+    }
+
+    .innerContainer {
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .mes-name-clock {
+        margin-bottom: 5px;
+
+        span:nth-of-type(1) {
+            font-size: 15px;
+        }
+    }
+
+    .message {
+        padding: 10px;
+    }
+
+    .answers-info {
+        margin-top: 5px;
+    }
+
+    .answers-counter {
+        margin-right: 10px;
+    }
+
+    .dateIcon {
+        width: calc(100% - 20px);
+        margin: 15px 0px;
+        margin-left: 10px;
+    }
+
+    .arrow-down {
+        width: 24px;
+    }
+
+    .posPop {
+        right: unset;
+        left: -20px;
+    }
+
+    .charImg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .reactions {
+        margin-top: 5px;
+    }
+
+    .reactIconsDiv {
+        max-width: 180px;
+    }
+
+    .add-reaction-icon {
+        margin-left: 0px;
+    }
+
+    .popUpMessage {
+        padding: 0px 10px;
+
+
+        img:nth-of-type(1) {
+            width: unset;
+        }
+
+        img {
+            width: 34px;
+        }
+
+        img:nth-of-type(4) {
+            width: unset;
+        }
+    }
+
+    .textareaDirektMessage {
+        padding: 0px 10px;
+
+    }
+
+    .textAreaDirekt {
+        padding: 15px;
+        height: 130px;
+    }
+
+    .sendArrow {
+        width: 34px;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .iconContainerTextArea {
+        gap: 0px;
+        left: 15px;
+
+        div {
+            margin: 0px 5px
+        }
+
+        img {
+            width: 34px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+@media (max-width: 1000px) and (min-width: 825px) {
+    .emoji-div {
+        left: 110px !important;
+        bottom: 70px !important;
+    }
+}

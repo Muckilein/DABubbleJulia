@@ -1,0 +1,332 @@
+.edit-channel-dialog {
+    position: relative;
+    padding: 35px;
+    width: 872px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.mat-mdc-dialog-surface {
+    border-top-left-radius: 0px !important;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 400px;
+
+
+        img {
+            width: 30px;
+        }
+    }
+}
+
+.new-chan-name-input-div {
+    position: relative;
+
+    img {
+        position: absolute;
+        left: 15px;
+        top: 16px;
+        width: 23px;
+    }
+
+    input {
+        width: 100%;
+        padding: 18px 20px;
+        padding-left: 45px;
+        border: 1px solid #ADB0D9;
+        border-radius: 30px;
+        box-sizing: border-box;
+    }
+}
+
+.new-chan-desc-input {
+    width: 100%;
+    padding: 18px 20px;
+    border: 1px solid #ADB0D9;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.channel-name-outer-div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ADB0D9;
+
+    div:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+}
+
+.channel-sub-headlines {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span:nth-of-type(2) {
+        cursor: pointer;
+        color: #535AF1;
+        transition: all 225ms ease-in-out;
+
+        &:hover {
+            font-weight: 700;
+        }
+    }
+}
+
+.channel-desc-edit-div {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin: 16px 0px;
+}
+
+.border-div-editing {
+    margin: 14px 25px;
+    padding: 16px;
+}
+
+.channel-description-outer-div {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ADB0D9;
+}
+
+.border-div {
+    border-bottom: 1px solid #ADB0D9;
+}
+
+.channel-creater-name {
+    font-size: 24px;
+    color: #535AF1;
+}
+
+.btn-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.dialogDiv {
+    padding: 20px;
+    border: 1px solid #ADB0D9;
+    border-radius: 20px;
+}
+
+.dialogHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+
+    img {
+        cursor: pointer;
+
+        &:hover {
+            content: url('/angular-projects/dabubble/assets/img/close-hover.svg');
+        }
+    }
+}
+
+.members {
+    gap: 13px;
+}
+
+.addMembers {
+    cursor: pointer;
+    transition: all 225ms ease-in;
+    width: 282px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 12px 29px;
+    gap: 10px;
+
+    &:hover {
+        background-color: #ECEEFE;
+        color: #7e83f5;
+
+        img {
+            content: url('/angular-projects/dabubble/assets/icons/add-people-hover.svg');
+        }
+    }
+}
+
+.contactDiv {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    transition: all 225ms ease-in-out;
+    margin: 10px 0px;
+
+    img {
+        width: 50px;
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+
+    span {
+        font-size: 18px;
+    }
+
+    &:hover {
+        background-color: #eceefe;
+    }
+
+    &:active {
+        span {
+            transition: all 225ms ease-in-out;
+            color: #7e83f5;
+            font-weight: 700;
+        }
+    }
+}
+
+.stateDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    position: absolute;
+    background-color: #ADB0D9;
+    right: 15px;
+    bottom: 7px;
+    border: 2px white solid;
+}
+
+.greenDot {
+    background-color: #92C83E;
+}
+
+@media (max-width:830px) {
+    .edit-channel-dialog {
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        padding: 16px;
+        padding-top: 40px;
+    }
+}
+
+@media (max-width:400px) {
+    .edit-channel-dialog {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .dialog-header {
+        div {
+            img {
+                width: 26px;
+            }
+        }
+
+        img {
+            width: 34px;
+        }
+    }
+
+    .channel-name-outer-div {
+        padding: 10px;
+    }
+
+    .channel-description-outer-div {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .channel-creater-name {
+        font-size: 18px;
+    }
+
+    .channel-desc-edit-div {
+        gap: 10px;
+        margin: 5px 0px;
+    }
+
+    .new-chan-desc-input {
+        padding: 10px 15px;
+    }
+
+    .border-div-editing {
+        margin: 0px 10px;
+        padding: 10px;
+        padding-top: 0px;
+    }
+
+    .dialogDiv {
+        padding: 10px;
+    }
+
+    .dialogHeader {
+        margin-bottom: 10px;
+    }
+
+    .members {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    .addMembers {
+        width: 100%;
+        padding: 9px 0px;
+        gap: 10px;
+    }
+
+    .contactDiv {
+        margin: 4px 0px;
+        gap: 8px;
+        padding-right: 7px;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            margin: 0px;
+            width: 40px;
+            height: 40px;
+        }
+
+        span {
+            font-size: 15px;
+        }
+    }
+
+    .stateDot {
+        width: 7px;
+        height: 7px;
+        right: -2px;
+        bottom: 1px;
+        ;
+    }
+
+    .btn {
+        padding: 5px 10px;
+    }
+}
