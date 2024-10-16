@@ -147,8 +147,8 @@ export class MainPageComponent {
     let ref = collection(this.firestore, 'thread');
     return onSnapshot(ref, (list) => {
       let cl: any = []
-      list.forEach(elem => {
-        if (this.isUserInMemberList(elem.data())) {
+      list.forEach(elem => {        
+        if (this.isUserInMemberList(elem.data())||this.isPublic(elem.data())) {
           cl.push(elem.data());
         }
       });
@@ -158,9 +158,13 @@ export class MainPageComponent {
 
   }
 
+  isPublic(channel:any){
+    return channel.channel.public =="yes";
+  }
+
   isUserInMemberList(channel: any) {
     let b = false;
-    let list: any[] = channel.channel.members;
+    let list: any[] = channel.channel.members;  
     list.forEach((m) => {
       if (m.memberID == this.user.idDB) {
         b = true;

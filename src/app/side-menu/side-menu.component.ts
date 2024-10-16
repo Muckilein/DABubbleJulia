@@ -69,6 +69,7 @@ export class SideMenuComponent {
           if (docRef) {
             channelId = docRef.id;
             let c = {
+              "public":this.madeChannel.public,
               "name": this.madeChannel.name,
               "creator": this.madeChannel.creator,
               "idDB": channelId,
@@ -120,7 +121,7 @@ export class SideMenuComponent {
     dialogRef.componentInstance.userList = this.userList;//Kopie
     dialogRef.componentInstance.dialogReference = dialogRef;
     dialogRef.afterClosed().subscribe(result => {
-      this.madeChannel = result;
+      this.madeChannel = result;      
       if (result && result != "") { this.addChannel(); }
 
     });

@@ -96,12 +96,11 @@ export class CreateChannelDialogComponent {
   }
 
   /**
-   * Mak the new channel
+   * Make the new channel
    */
   make() {
     this.addMember(this.user); // the person thhat creates the channel is automatikly the creator
-    this.fristPage = true;
-
+    this.fristPage = true;   
     let radioBAll: any = document.getElementById("allMember");
     let memberList = [];
 
@@ -110,15 +109,18 @@ export class CreateChannelDialogComponent {
       this.userList.forEach((u) => {
         memberList.push({ "memberName": u.name, "memberID": u.idDB });
       });
+      this.channel.public="yes";
 
     } else { //Only a part of the users are selected as members
       this.currentlyAddedUser.forEach((us) => {
         memberList.push({ "memberName": us.name, "memberID": us.idDB });
       });
+      this.channel.public="no";
     }
+    
     this.channel.members = memberList;
     this.channelJSON = this.channel.toJSON();
-    this.channelJSON.creator = this.user.name;
+    this.channelJSON.creator = this.user.name;    
     this.closeDialog();
 
   }

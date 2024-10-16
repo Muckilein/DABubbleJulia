@@ -81,7 +81,7 @@ export class ChatHepler {
   createEmptyThread(): any {
     let t = {
       "channel":
-      {
+      { "public":"yes",
         "creator": "",
         "name": "",
         "idDB": "",
